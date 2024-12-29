@@ -114,6 +114,10 @@ Custom middleware can be found in `main.py`:
 - **Hot Reload**: Using Arel, any changes made to files in the `resources` and `public` directories automatically trigger a browser refresh.
 - **WebSocket Setup**: A WebSocket route is included in `main.py` to support hot reloading.
 
+- **Installed Packages**:
+  - The only two packages explicitly installed for this project are **`fastapi`** and **`arel`**.
+  - All other packages listed in `requirements.txt` were automatically downloaded as dependencies for these two packages.
+
 ---
 
 ## Requirements
