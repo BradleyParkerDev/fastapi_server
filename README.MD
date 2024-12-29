@@ -21,6 +21,7 @@ This project serves as a starter template for FastAPI-based server applications.
   - **GZip Compression**: Optimizes responses for faster delivery.
   - **Authorization Middleware**: Creates a guest cookie, the value is just a string of text──it is not attached to a session.
   - **No-Cache Middleware**: Ensures fresh data by disabling client-side caching.
+  - **CORS**: CORS configuration is set up, but currently doesn't have any restrictions.
 - **Environment Configuration**: Simplified management of environment variables via `.env`.
 - **Scalable Structure**: Organized directory layout to support future growth and enhancements.
 
