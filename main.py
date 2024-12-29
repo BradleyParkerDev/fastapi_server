@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.middleware.cors import CORSMiddleware  # Import CORSMiddleware
 from app.routes import WebRoutes, UsersRoutes
-from app.lib import AuthUtility
+from app.lib import AuthUtility, LayoutUtility
 from starlette.routing import WebSocketRoute
 import uvicorn
 
@@ -15,12 +15,13 @@ load_dotenv()
 FASTAPI_PORT = int(os.getenv("FASTAPI_PORT", 5001))
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
-# Create FastAPI App
-app = FastAPI()
 
 # Utilities
 auth = AuthUtility()
+layout = LayoutUtility()
 
+# Create FastAPI App
+app = FastAPI(lifespan=layout.arel.lifespan) # Lifespan handler is attached to FastAPI
 
 
 # Routes
@@ -59,6 +60,8 @@ app.add_middleware( # CORS Middleware - currently allows everything
 # Mount static files in public directory
 app.mount("/public", StaticFiles(directory="public"), name="public")
 
+# Hot reloading websocket
+app.router.routes.append(WebSocketRoute("/hot-reload", layout.arel.hotreload, name="hot-reload"))
 
 
 # Start Server

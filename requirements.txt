@@ -1,5 +1,6 @@
 annotated-types==0.7.0
 anyio==4.7.0
+arel==0.3.0
 certifi==2024.12.14
 click==8.1.8
 dnspython==2.7.0
@@ -30,5 +31,5 @@ typer==0.15.1
 typing_extensions==4.12.2
 uvicorn==0.34.0
 uvloop==0.21.0
-watchfiles==1.0.3
+watchfiles==0.24.0
 websockets==14.1

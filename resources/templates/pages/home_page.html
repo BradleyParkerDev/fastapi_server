@@ -25,6 +25,9 @@
             </div>
         </div>
     </div>
-
+    <!-- Hot reload script will only be included in DEBUG mode -->
+    {% if DEBUG %}
+        {{ hotreload.script(url_for('hot-reload')) | safe }}
+    {% endif %}
 </body>
 </html>

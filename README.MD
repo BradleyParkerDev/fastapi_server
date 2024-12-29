@@ -11,6 +11,7 @@ This project serves as a starter template for FastAPI-based server applications.
 - Middleware for common functionalities.
 - Separate routes for API endpoints and web pages.
 - A customizable, extensible setup for developers.
+- Hot reloading using Arel for seamless development experience.
 
 ---
 
@@ -22,6 +23,7 @@ This project serves as a starter template for FastAPI-based server applications.
   - **Authorization Middleware**: Creates a guest cookie, the value is just a string of text──it is not attached to a session.
   - **No-Cache Middleware**: Ensures fresh data by disabling client-side caching.
   - **CORS**: CORS configuration is set up, but currently doesn't have any restrictions.
+- **Hot Reloading**: Leveraging Arel, changes made to files in the `resources` and `public` directories automatically refresh the browser.
 - **Environment Configuration**: Simplified management of environment variables via `.env`.
 - **Scalable Structure**: Organized directory layout to support future growth and enhancements.
 
@@ -108,6 +110,10 @@ Custom middleware can be found in `main.py`:
 - **Authorization Middleware**: Intended purpose is to manage the user's session.
 - **No-Cache Middleware**: Disables browser caching.
 
+### Hot Reloading with Arel
+- **Hot Reload**: Using Arel, any changes made to files in the `resources` and `public` directories automatically trigger a browser refresh.
+- **WebSocket Setup**: A WebSocket route is included in `main.py` to support hot reloading.
+
 ---
 
 ## Requirements
@@ -119,6 +125,7 @@ Below are the primary dependencies:
 - **Python-Dotenv**: Environment variable management.
 - **Starlette**: Provides foundational ASGI support.
 - **AnyIO**: Manages asynchronous operations.
+- **Arel**: Enables hot reloading for improved development workflow.
 
 See `requirements.txt` for the full list of dependencies.
 
