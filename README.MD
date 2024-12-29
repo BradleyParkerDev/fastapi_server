@@ -116,7 +116,7 @@ Custom middleware can be found in `main.py`:
 
 ### Installed Packages
 - The only two packages that were explicitly installed for this project were **`FastAPI`** and **`Arel`**.
-- All of the other packages that are listed in the `requirements.txt` were automatically downloaded as dependencies for those two packages.
+- All of the other packages that are listed in the `requirements.txt` were automatically downloaded as dependencies for these two packages.
 
 ---
 
