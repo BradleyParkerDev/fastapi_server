@@ -115,8 +115,8 @@ Custom middleware can be found in `main.py`:
 - **WebSocket Setup**: A WebSocket route is included in `main.py` to support hot reloading.
 
 ### Installed Packages
-- The only two packages explicitly installed for this project are **`FastAPI`** and **`Arel`**.
-- All other packages listed in `requirements.txt` were automatically downloaded as dependencies for these two packages.
+- The only two packages that were explicitly installed for this project were **`FastAPI`** and **`Arel`**.
+- All other packages listed in `requirements.txt` were automatically downloaded as dependencies for those two packages.
 
 ---
 
