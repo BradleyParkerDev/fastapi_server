@@ -19,7 +19,7 @@ This project serves as a starter template for FastAPI-based server applications.
 - **FastAPI Framework**: A high-performance, easy-to-use framework for building APIs and web applications.
 - **Middleware**:
   - **GZip Compression**: Optimizes responses for faster delivery.
-  - **Authorization Middleware**: Creates guest sessions for unauthenticated users and validates session cookies for authenticated users.
+  - **Authorization Middleware**: Creates a guest cookie, the value is just a string of text──it is not attached to a session.
   - **No-Cache Middleware**: Ensures fresh data by disabling client-side caching.
 - **Environment Configuration**: Simplified management of environment variables via `.env`.
 - **Scalable Structure**: Organized directory layout to support future growth and enhancements.
@@ -104,7 +104,7 @@ By default, the server runs at `http://127.0.0.1:5001`.
 
 ### Middleware
 Custom middleware can be found in `main.py`:
-- **Authorization Middleware**: Manages user sessions.
+- **Authorization Middleware**: Intended purpose is to manage the user's session.
 - **No-Cache Middleware**: Disables browser caching.
 
 ---
