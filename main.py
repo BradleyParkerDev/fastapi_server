@@ -12,7 +12,7 @@ import uvicorn
 
 # Load environment variables
 load_dotenv()
-FASTAPI_PORT = int(os.getenv("FASTAPI_PORT", 5001))
+FASTAPI_PORT = int(os.getenv("FASTAPI_PORT", 3001))
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
 
@@ -66,7 +66,7 @@ app.router.routes.append(WebSocketRoute("/hot-reload", layout.arel.hotreload, na
 
 # Start Server
 if __name__ == "__main__":
-    # uvicorn main:app --host 127.0.0.1 --port 5001 --reload
+    # uvicorn main:app --host 127.0.0.1 --port 3001 --reload
     uvicorn.run("main:app", host="127.0.0.1", port=FASTAPI_PORT, reload=DEBUG)
 
 
