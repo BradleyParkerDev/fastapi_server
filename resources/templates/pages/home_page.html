@@ -6,6 +6,7 @@
     <title>FastAPI Server</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.4"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 flex flex-col items-center justify-center min-h-screen">
@@ -26,6 +27,22 @@
                 <button class="bg-blue-500 text-white px-4 py-2 rounded" @click="if (count > 0) count--">Decrement</button>
                 <button class="bg-green-500 text-white px-4 py-2 rounded" @click="count++">Increment</button>
             </div>
+        </div>
+        <h1 class="text-2xl font-bold mb-4 mt-[20px]">A simple HTMX request.</h1>
+        <!-- Button to trigger HTMX request -->
+        <button
+            hx-get="https://jsonplaceholder.typicode.com/users"  
+            hx-target="#result"
+            class="p-2 bg-blue-500 text-white rounded-lg"
+            x-data = "{buttonText: 'Click to Test HTMX'}"
+            x-text="buttonText"
+        >
+            <!-- Click to Test HTMX -->
+        </button>
+
+        <!-- This will display the response from the server -->
+        <div id="result" class="mt-4 p-4 bg-white rounded shadow">
+            <!-- Server response will be displayed here -->
         </div>
     </div>
 
