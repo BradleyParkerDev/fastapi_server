@@ -96,7 +96,7 @@ To start the FastAPI server:
 python main.py
 ```
 
-By default, the server runs at `http://127.0.0.1:5001`.
+By default, the server runs at `http://127.0.0.1:3001`.
 
 ---
 
