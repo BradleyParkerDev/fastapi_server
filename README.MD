@@ -34,16 +34,17 @@ This project serves as a starter template for FastAPI-based server applications.
 ```
 fastapi_server/
 ├── app/
-│   ├── controllers/          # Handles business logic and route controllers
+│   ├── controllers/          # Handles business logic 
 │   ├── lib/                  # Utility classes and helpers
 │   ├── routes/               # API route definitions
 │   └── __init__.py           # Application module initializer
 ├── public/                   # Static assets (CSS, JS, images, etc.)
 ├── resources/                # Templates or other project resources
+├── .gitignore                # Gitignore configuration
+├── example.env               # Example environment variables configuration
 ├── main.py                   # Main entry point for the application
-├── .env                      # Environment variables configuration
-├── requirements.txt          # Python dependencies
-└── README.md                 # Project documentation
+├── README.md                 # Project documentation
+└── requirements.txt          # Python dependencies
 ```
 
 ---
@@ -52,8 +53,8 @@ fastapi_server/
 
 ### Prerequisites
 
-- **Python**: Version `3.12.6` or higher
-- **pip**: Version `24.3.1` or higher
+- **Python**: Version `3.13.1` or higher
+- **pip**: Version `25` or higher
 
 ### Installation
 
