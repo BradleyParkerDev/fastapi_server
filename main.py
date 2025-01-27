@@ -20,6 +20,7 @@ DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 auth = AuthUtility()
 layout = LayoutUtility()
 
+
 # Create FastAPI App - Parameters for OpenAPI and Arel
 app = FastAPI(title=os.getenv("APP_NAME"),
               docs_url=None if os.getenv("DEBUG") == "false" else "/docs",
@@ -34,7 +35,6 @@ app.include_router(web_routes.setup_routes())
 
 user_routes = UserRoutes()
 app.include_router(user_routes.setup_routes())
-
 
 
 # Middleware
@@ -58,7 +58,6 @@ app.add_middleware( # CORS Middleware - currently allows everything
     allow_methods=["*"],  # Adjust this to restrict allowed HTTP methods
     allow_headers=["*"],  # Adjust this to restrict allowed headers
 )
-
 
 
 # Mount static files in public directory
