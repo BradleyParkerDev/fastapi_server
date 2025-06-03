@@ -2,8 +2,10 @@ from arel import HotReload, Path
 from starlette.routing import WebSocketRoute
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+import os
 
-class LayoutArelHelper():
+
+class LayoutReloadHelper():
 
     def __init__(self):
         # Initialize hot reload watching resources and public directories

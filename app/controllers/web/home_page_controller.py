@@ -26,5 +26,5 @@ async def home_page_controller(request:Request, response:Response):
         "request": request,  # Pass the request object
         "greeting": greeting,
         "DEBUG": DEBUG,
-        "hotreload": layout.arel.hotreload
+        "hotreload": layout.reload.hotreload
     }) 

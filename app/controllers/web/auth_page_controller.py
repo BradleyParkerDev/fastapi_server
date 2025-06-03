@@ -28,5 +28,5 @@ async def auth_page_controller(request:Request, response:Response):
         "heading": heading,
         "message": message,
         "DEBUG": DEBUG,
-        "hotreload": layout.arel.hotreload
+        "hotreload": layout.reload.hotreload
     }) 

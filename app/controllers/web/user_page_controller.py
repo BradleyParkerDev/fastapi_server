@@ -28,5 +28,5 @@ async def user_page_controller(request:Request, response:Response, id:str):
         "heading": heading,
         "message": message,
         "DEBUG": DEBUG,
-        "hotreload": layout.arel.hotreload
+        "hotreload": layout.reload.hotreload
     }) 

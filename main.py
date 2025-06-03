@@ -21,12 +21,12 @@ auth = AuthUtility()
 layout = LayoutUtility()
 
 
-# Create FastAPI App - Parameters for OpenAPI and Arel
+# Create FastAPI App - Parameters for OpenAPI and lifespan handler
 app = FastAPI(title=os.getenv("APP_NAME"),
               docs_url=None if os.getenv("DEBUG") == "false" else "/docs",
               redoc_url=None if os.getenv("DEBUG") == "false" else "/redoc",
               openapi_url=None if os.getenv("DEBUG") == "false" else "/openapi.json",
-              lifespan=layout.arel.lifespan) # Lifespan handler is attached to FastAPI
+              lifespan=layout.reload.lifespan) # Lifespan handler is attached to FastAPI
 
 
 # Routes
@@ -64,7 +64,7 @@ app.add_middleware( # CORS Middleware - currently allows everything
 app.mount("/public", StaticFiles(directory="public"), name="public")
 
 # Hot reloading websocket
-app.router.routes.append(WebSocketRoute("/hot-reload", layout.arel.hotreload, name="hot-reload"))
+app.router.routes.append(WebSocketRoute("/hot-reload", layout.reload.hotreload, name="hot-reload"))
 
 
 # Start Server
